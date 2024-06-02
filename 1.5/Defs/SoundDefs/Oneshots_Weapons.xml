@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+  
+  <SoundDef>
+    <defName>VWEB_Shot_FirestormFlamethrower</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>4</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/FirestormFlamethrower</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>40.58823~40.58823</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>
