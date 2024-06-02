@@ -224,7 +224,7 @@
             <ammoDef>Bioferrite</ammoDef>
             <ammoCountPerCharge>5</ammoCountPerCharge>
             <baseReloadTicks>60</baseReloadTicks>
-            <chargeNoun>flare</chargeNoun>
+            <chargeNoun>charge</chargeNoun>
          </li>
       </comps>
    </ThingDef>
@@ -321,11 +321,23 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_Minigun</defaultProjectile>
+        <defaultProjectile>VWEB_Bullet_CycloneMinigun</defaultProjectile>
         <warmupTime>2.5</warmupTime>
         <range>30.9</range>
         <burstShotCount>25</burstShotCount>
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VWEB_Bullet_CycloneMinigun</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>30.9</range>
+        <burstShotCount>50</burstShotCount>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -341,7 +353,20 @@
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>
+    <comps>
+        <li Class="CompProperties_ApparelReloadable">
+            <hotKey>Misc4</hotKey>
+            <soundReload>Standard_Reload</soundReload>
+            <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            <maxCharges>2</maxCharges>
+            <ammoDef>Bioferrite</ammoDef>
+            <ammoCountPerCharge>10</ammoCountPerCharge>
+            <baseReloadTicks>60</baseReloadTicks>
+            <chargeNoun>burst</chargeNoun>
+        </li>
+    </comps>
   </ThingDef>
+  
   <ThingDef ParentName="BaseBullet">
     <defName>VWEB_Bullet_CycloneMinigun</defName>
     <label>cyclone minigun bullet</label>
