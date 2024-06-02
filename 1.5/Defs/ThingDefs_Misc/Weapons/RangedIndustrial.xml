@@ -84,6 +84,7 @@
             </capacities>
             <power>9</power>
             <cooldownTime>2</cooldownTime>
+			<armorPenetration>0.13</armorPenetration>
          </li>
          <li>
             <label>barrel</label>
@@ -93,6 +94,7 @@
             </capacities>
             <power>9</power>
             <cooldownTime>2</cooldownTime>
+			<armorPenetration>0.13</armorPenetration>
          </li>
       </tools>
       <comps>
@@ -204,6 +206,7 @@
             </capacities>
             <power>9</power>
             <cooldownTime>2</cooldownTime>
+			<armorPenetration>0.13</armorPenetration>
          </li>
          <li>
             <label>barrel</label>
@@ -213,6 +216,7 @@
             </capacities>
             <power>9</power>
             <cooldownTime>2</cooldownTime>
+			<armorPenetration>0.13</armorPenetration>
          </li>
       </tools>
       <comps>
@@ -308,7 +312,7 @@
         <recipeUsers>
            <li>BioferriteShaper</li>
         </recipeUsers>
-        <displayPriority>423</displayPriority>
+        <displayPriority>424</displayPriority>
     </recipeMaker>
     <techLevel>Industrial</techLevel>
     <weaponTags>
@@ -351,6 +355,7 @@
         </capacities>
         <power>11.7</power>
         <cooldownTime>2.6</cooldownTime>
+		<armorPenetration>0.18</armorPenetration>
       </li>
     </tools>
     <comps>
@@ -381,6 +386,94 @@
 	  <stoppingPower>0.5</stoppingPower>
       <speed>70</speed>
     </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>VWEB_Gun_PiercerRifle</defName>
+    <label>piercer rifle</label>
+    <description>A versatile, but still ancient pattern bolt-action rifle. Has a long range but suffers from low rate of fire. It’s unlikely to drive animals to revenge, which makes it a preferred weapon for hunting. \n\nIt comes equipped with delicate but incredibly sharp bioferrite bayonet, which can be used in melee combat to deal substantial sharp damage in case an enemy gets too close.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/PiercerRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>16000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+	  <MarketValue>405</MarketValue>
+    </statBases>
+	<equippedAngleOffset>65</equippedAngleOffset>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+	  <Bioferrite>20</Bioferrite>
+    </costList>
+    <recipeMaker>
+        <researchPrerequisite>BioferriteIgnition</researchPrerequisite>
+        <skillRequirements>
+           <Crafting>6</Crafting>
+        </skillRequirements>
+        <recipeUsers>
+           <li>BioferriteShaper</li>
+        </recipeUsers>
+        <displayPriority>423</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VWEB_Bullet_PiercerRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>33.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>0.22</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>VWEB_Bullet_PiercerRifle</defName>
+    <label>piercer rifle bullet</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+	  <armorPenetrationBase>0.27</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
   </ThingDef>
    
 </Defs>
