@@ -51,27 +51,6 @@
             <soundCastTail>GunTail_Medium</soundCastTail>
             <muzzleFlashScale>9</muzzleFlashScale>
          </li>
-         <li>
-            <verbClass>Verb_LaunchProjectileStaticPsychic</verbClass>
-            <label>deploy flare</label>
-            <defaultProjectile>Grenade_DisruptorFlare</defaultProjectile>
-            <warmupTime>1</warmupTime>
-            <range>33.9</range>
-            <burstShotCount>1</burstShotCount>
-            <onlyManualCast>true</onlyManualCast>
-            <hasStandardCommand>true</hasStandardCommand>
-            <targetable>true</targetable>
-            <violent>false</violent>
-            <targetParams>
-               <canTargetPawns>false</canTargetPawns>
-               <canTargetBuildings>false</canTargetBuildings>
-               <canTargetLocations>true</canTargetLocations>
-            </targetParams>
-            <soundCast>FlareLaunch</soundCast>
-            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-            <canGoWild>false</canGoWild>
-            <explosionRadiusRingColor>(0.8, 0.8, 0.4, 1)</explosionRadiusRingColor> <!-- Keep in sync with PlaceWorker_GlowRadius.RingColor -->
-         </li>
       </verbs>
       <weaponTags>
          <li>VWEB_BioferriteWeapon</li>
@@ -98,18 +77,45 @@
          </li>
       </tools>
       <comps>
-         <li Class="CompProperties_ApparelReloadable">
-            <hotKey>Misc4</hotKey>
-            <soundReload>Standard_Reload</soundReload>
-            <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-            <maxCharges>6</maxCharges>
-            <ammoDef>Bioferrite</ammoDef>
-            <ammoCountPerCharge>5</ammoCountPerCharge>
-            <baseReloadTicks>60</baseReloadTicks>
-            <chargeNoun>flare</chargeNoun>
-         </li>
+      <li Class="CompProperties_EquippableAbilityReloadable">
+        <abilityDef>VWEB_FlarestrikeFlare</abilityDef>
+        <maxCharges>4</maxCharges>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>burner charge</chargeNoun>
+        <ammoDef>Bioferrite</ammoDef>
+        <ammoCountPerCharge>5</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+      </li>
       </comps>
    </ThingDef>
+   
+  <AbilityDef>
+    <defName>VWEB_FlarestrikeFlare</defName>
+    <label>flarestrike flare</label>
+    <description>Expend a pressurized bioferrite charge to create a burst of flame.</description>
+    <iconPath>UI/Abilities/FlarestrikeFlare</iconPath>
+    <aiCanUse>false</aiCanUse>
+    <ai_IsIncendiary>false</ai_IsIncendiary>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <verbProperties>
+            <verbClass>Verb_LaunchProjectileStaticPsychic</verbClass>
+            <defaultProjectile>Grenade_DisruptorFlare</defaultProjectile>
+            <warmupTime>1</warmupTime>
+            <range>33.9</range>
+            <burstShotCount>1</burstShotCount>
+            <onlyManualCast>true</onlyManualCast>
+            <violent>false</violent>
+            <targetParams>
+               <canTargetPawns>false</canTargetPawns>
+               <canTargetBuildings>false</canTargetBuildings>
+               <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+            <soundCast>FlareLaunch</soundCast>
+            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+            <canGoWild>false</canGoWild>
+            <explosionRadiusRingColor>(0.8, 0.8, 0.4, 1)</explosionRadiusRingColor> <!-- Keep in sync with PlaceWorker_GlowRadius.RingColor -->
+    </verbProperties>
+  </AbilityDef>
    
    <ThingDef ParentName="BaseBullet">
       <defName>VWEB_Bullet_FlarestrikeRifle</defName>
@@ -168,12 +174,6 @@
          <ComponentIndustrial>3</ComponentIndustrial>
          <Bioferrite>20</Bioferrite>
       </costList>
-      <recipeMaker>
-         <skillRequirements>
-            <Crafting>5</Crafting>
-         </skillRequirements>
-         <displayPriority>430</displayPriority>
-      </recipeMaker>
       <verbs>
          <li>
             <verbClass>Verb_Shoot</verbClass>
