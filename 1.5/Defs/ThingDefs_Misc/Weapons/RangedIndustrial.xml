@@ -185,7 +185,7 @@
             <soundCastTail>GunTail_Heavy</soundCastTail>
             <muzzleFlashScale>9</muzzleFlashScale>
          </li>
-         <li>
+         <!-- <li>
             <verbClass>Verb_Shoot</verbClass>
             <hasStandardCommand>true</hasStandardCommand>
             <defaultProjectile>VFE_Bullet_FirestormFlamethrower</defaultProjectile>
@@ -196,7 +196,7 @@
             <soundCast>VWEB_Shot_FirestormFlamethrower</soundCast>
             <soundCastTail>GunTail_Light</soundCastTail>
             <muzzleFlashScale>14</muzzleFlashScale>
-         </li>
+         </li> -->
       </verbs>
       <tools>
          <li>
@@ -220,18 +220,64 @@
          </li>
       </tools>
       <comps>
-         <li Class="CompProperties_ApparelReloadable">
-            <hotKey>Misc4</hotKey>
-            <soundReload>Standard_Reload</soundReload>
-            <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-            <maxCharges>4</maxCharges>
-            <ammoDef>Bioferrite</ammoDef>
-            <ammoCountPerCharge>5</ammoCountPerCharge>
-            <baseReloadTicks>60</baseReloadTicks>
-            <chargeNoun>charge</chargeNoun>
-         </li>
+      <li Class="CompProperties_EquippableAbilityReloadable">
+        <abilityDef>VWEB_FirestormBlazer</abilityDef>
+        <maxCharges>4</maxCharges>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>burner charge</chargeNoun>
+        <ammoDef>Bioferrite</ammoDef>
+        <ammoCountPerCharge>5</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+      </li>
       </comps>
    </ThingDef>
+   
+  <AbilityDef>
+    <defName>VWEB_FirestormBlazer</defName>
+    <label>firestorm blazer</label>
+    <description>Fire a short-ranged flame blast over a short but wide area.</description>
+    <iconPath>UI/Abilities/FirestormBlaze</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsIncendiary>true</ai_IsIncendiary>
+    <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>true</requireLineOfSight>
+      <range>9.9</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>FireSpew_Resolve</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <flammabilityAttachFireChanceCurve>
+        <points>
+          <li>(0.2, 0)</li>
+          <li>(1, 1)</li>
+        </points>
+      </flammabilityAttachFireChanceCurve>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityFireSpew">
+        <range>9.9</range>
+        <lineWidthEnd>3</lineWidthEnd>
+        <filthDef>Filth_Ash</filthDef>
+        <damAmount>12</damAmount>
+        <canHitFilledCells>true</canHitFilledCells>
+      </li>
+      <li Class="CompProperties_AbilityBurner">
+        <numStreams>15</numStreams>
+        <range>9</range> <!-- go a bit further than the actual ability range, since it's meant to be a noisy effect -->
+        <coneSizeDegrees>5</coneSizeDegrees>
+        <moteDef>Mote_IncineratorBurst</moteDef>
+        <barrelOffsetDistance>6</barrelOffsetDistance>
+        <sizeReductionDistanceThreshold>8</sizeReductionDistanceThreshold>
+        <lifespanNoise>40</lifespanNoise>
+        <rangeNoise>.4</rangeNoise>
+        <effecterDef>BurnerUsed</effecterDef>
+      </li>
+    </comps>
+  </AbilityDef>
    
    <ThingDef ParentName="BaseBullet">
       <defName>VWEB_Bullet_FirestormShotgun</defName>
@@ -249,7 +295,7 @@
       </projectile>
    </ThingDef>
    
-   <VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+   <!-- <VFECore.ExpandableProjectileDef ParentName="BaseBullet">
       <defName>VFE_Bullet_FirestormFlamethrower</defName>
       <label>firestorm shotgun charge</label>
       <thingClass>VFECore.FlamethrowProjectile</thingClass>
@@ -274,7 +320,7 @@
       <tickDamageRate>20</tickDamageRate>
       <dealsDamageOnce>true</dealsDamageOnce>
       <minDistanceToAffect>2</minDistanceToAffect>
-   </VFECore.ExpandableProjectileDef>
+   </VFECore.ExpandableProjectileDef> -->
    
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VWEB_Gun_CycloneMinigun</defName>
@@ -334,18 +380,6 @@
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>VWEB_Bullet_CycloneMinigun</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
-        <range>30.9</range>
-        <burstShotCount>50</burstShotCount>
-        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-        <soundCast>Shot_Minigun</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-      </li>
     </verbs>
     <tools>
       <li>
@@ -359,18 +393,39 @@
       </li>
     </tools>
     <comps>
-        <li Class="CompProperties_ApparelReloadable">
-            <hotKey>Misc4</hotKey>
-            <soundReload>Standard_Reload</soundReload>
-            <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-            <maxCharges>2</maxCharges>
-            <ammoDef>Bioferrite</ammoDef>
-            <ammoCountPerCharge>10</ammoCountPerCharge>
-            <baseReloadTicks>60</baseReloadTicks>
-            <chargeNoun>burst</chargeNoun>
-        </li>
+      <li Class="CompProperties_EquippableAbilityReloadable">
+        <abilityDef>VWEB_CycloneRapidBurst</abilityDef>
+        <maxCharges>2</maxCharges>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>burner charge</chargeNoun>
+        <ammoDef>Bioferrite</ammoDef>
+        <ammoCountPerCharge>10</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+      </li>
     </comps>
   </ThingDef>
+  
+  <AbilityDef>
+    <defName>VWEB_CycloneRapidBurst</defName>
+    <label>cyclone rapid burst</label>
+    <description>Fire a rapid volley of shots by utilising the bioferrite-accelerated engine.</description>
+    <iconPath>UI/Abilities/FlarestrikeFlare</iconPath>
+    <aiCanUse>false</aiCanUse>
+    <ai_IsIncendiary>false</ai_IsIncendiary>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <verbProperties>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VWEB_Bullet_CycloneMinigun</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>30.9</range>
+        <burstShotCount>50</burstShotCount>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+    </verbProperties>
+  </AbilityDef>
   
   <ThingDef ParentName="BaseBullet">
     <defName>VWEB_Bullet_CycloneMinigun</defName>
