@@ -98,22 +98,22 @@
     <ai_IsIncendiary>false</ai_IsIncendiary>
     <showOnCharacterCard>false</showOnCharacterCard>
     <verbProperties>
-            <verbClass>Verb_LaunchProjectileStaticPsychic</verbClass>
-            <defaultProjectile>Grenade_DisruptorFlare</defaultProjectile>
-            <warmupTime>1</warmupTime>
-            <range>33.9</range>
-            <burstShotCount>1</burstShotCount>
-            <onlyManualCast>true</onlyManualCast>
-            <violent>false</violent>
-            <targetParams>
-               <canTargetPawns>false</canTargetPawns>
-               <canTargetBuildings>false</canTargetBuildings>
-               <canTargetLocations>true</canTargetLocations>
-            </targetParams>
-            <soundCast>FlareLaunch</soundCast>
-            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-            <canGoWild>false</canGoWild>
-            <explosionRadiusRingColor>(0.8, 0.8, 0.4, 1)</explosionRadiusRingColor> <!-- Keep in sync with PlaceWorker_GlowRadius.RingColor -->
+        <verbClass>Verb_LaunchProjectileStaticPsychic</verbClass>
+        <defaultProjectile>Grenade_DisruptorFlare</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>33.9</range>
+        <burstShotCount>1</burstShotCount>
+        <onlyManualCast>true</onlyManualCast>
+        <violent>false</violent>
+        <targetParams>
+            <canTargetPawns>false</canTargetPawns>
+            <canTargetBuildings>false</canTargetBuildings>
+            <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>FlareLaunch</soundCast>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        <canGoWild>false</canGoWild>
+        <explosionRadiusRingColor>(0.8, 0.8, 0.4, 1)</explosionRadiusRingColor> <!-- Keep in sync with PlaceWorker_GlowRadius.RingColor -->
     </verbProperties>
   </AbilityDef>
    
