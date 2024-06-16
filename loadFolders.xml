@@ -1,0 +1,12 @@
+<loadFolders>
+
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+	    <li IfModActive="OskarPotocki.VFE.Pirates">1.5/Mods/Pirates</li>	
+		<li IfModActive="VanillaExpanded.VWEHW">1.5/Mods/VWEHW</li>		
+	</v1.5>
+	
+</loadFolders>
+
+
