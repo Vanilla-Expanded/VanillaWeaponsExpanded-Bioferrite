@@ -32,6 +32,7 @@ public class Verb_CastAbility_Shoot : Verb_CastAbility
     public override void WarmupComplete()
     {
         base.WarmupComplete();
+        //normal ability flow activated here
         ability.Activate(currentTarget, currentDestination);
         Find.BattleLog.Add(new BattleLogEntry_RangedFire(caster,
             currentTarget.HasThing ? currentTarget.Thing : null,
