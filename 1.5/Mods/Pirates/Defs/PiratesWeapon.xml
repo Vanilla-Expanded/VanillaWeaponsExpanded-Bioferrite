@@ -60,8 +60,8 @@
 			<armorPenetration>0.13</armorPenetration>
          </li>
       </tools>
-      <comps>
-      <li Class="CompProperties_EquippableAbilityReloadable">
+       <comps Inherit="False">
+      <!--<li Class="CompProperties_EquippableAbilityReloadable">
         <abilityDef>VWEB_FirestormBlazer</abilityDef>
         <maxCharges>4</maxCharges>
         <soundReload>Standard_Reload</soundReload>
@@ -69,6 +69,25 @@
         <ammoDef>Bioferrite</ammoDef>
         <ammoCountPerCharge>5</ammoCountPerCharge>
         <baseReloadTicks>60</baseReloadTicks>
+      </li>-->
+          <li Class="CompProperties_EquippableAbilityReloadable">
+              <abilityDef>VWEB_WarbolterLongBurner</abilityDef>
+              <maxCharges>1</maxCharges>
+              <soundReload>Standard_Reload</soundReload>
+              <chargeNoun>burner charge</chargeNoun>
+              <ammoDef>Bioferrite</ammoDef>
+              <ammoCountPerCharge>20</ammoCountPerCharge>
+              <baseReloadTicks>60</baseReloadTicks>
+          </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+          <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+          <nameMaker>NamerArtWeaponGun</nameMaker>
+          <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+          <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
       </comps>
 	<modExtensions>
@@ -80,15 +99,6 @@
 				<drawSize>1</drawSize>
 			</graphicData>
 		</li>
-      <li Class="CompProperties_EquippableAbilityReloadable">
-        <abilityDef>VWEB_WarbolterLongBurner</abilityDef>
-        <maxCharges>1</maxCharges>
-        <soundReload>Standard_Reload</soundReload>
-        <chargeNoun>burner charge</chargeNoun>
-        <ammoDef>Bioferrite</ammoDef>
-        <ammoCountPerCharge>20</ammoCountPerCharge>
-        <baseReloadTicks>60</baseReloadTicks>
-      </li>
 	</modExtensions>
    </ThingDef>
    
@@ -102,7 +112,7 @@
     <warmupStartSound>FireSpew_Warmup</warmupStartSound>
     <showOnCharacterCard>false</showOnCharacterCard>
     <verbProperties>
-        <verbClass>Verb_ArcSprayIncinerator</verbClass>
+        <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_CastAbility_ArcSprayIncinerator</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>0.75</warmupTime>
         <range>34.9</range>

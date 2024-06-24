@@ -161,7 +161,7 @@
     <ai_IsIncendiary>true</ai_IsIncendiary>
     <warmupStartSound>FireSpew_Warmup</warmupStartSound>
     <verbProperties>
-        <verbClass>Verb_ArcSprayIncinerator</verbClass>
+        <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_CastAbility_ArcSprayIncinerator</verbClass>
         <warmupTime>0.75</warmupTime>
         <range>9.9</range>
         <minRange>3.9</minRange>
