@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
@@ -30,9 +31,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Xml"/>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml" />
     </ItemGroup>
 
 
@@ -43,10 +44,6 @@
         <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*" />
     </ItemGroup>
 
-    
-    
-    <ItemGroup>
-    </ItemGroup>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
