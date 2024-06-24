@@ -436,7 +436,7 @@
     <defName>VWEB_CycloneRapidBurst</defName>
     <label>cyclone rapid burst</label>
     <description>Fire a rapid volley of shots by utilising the bioferrite-accelerated engine.</description>
-    <iconPath>UI/Abilities/FlarestrikeFlare</iconPath>
+    <iconPath>UI/Abilities/CycloneMinigunRapidBurst</iconPath>
     <aiCanUse>false</aiCanUse>
     <ai_IsIncendiary>false</ai_IsIncendiary>
     <showOnCharacterCard>false</showOnCharacterCard>
