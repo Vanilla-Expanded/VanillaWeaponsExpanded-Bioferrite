@@ -287,7 +287,7 @@
                 <numStreams>15</numStreams>
                 <range>5.9</range>
                 <!-- go a bit further than the actual ability range, since it's meant to be a noisy effect -->
-                <coneSizeDegrees>9</coneSizeDegrees>
+                <coneSizeDegrees>15</coneSizeDegrees>
                 <moteDef>Mote_IncineratorBurst</moteDef>
                 <barrelOffsetDistance>6</barrelOffsetDistance>
                 <sizeReductionDistanceThreshold>3</sizeReductionDistanceThreshold>
