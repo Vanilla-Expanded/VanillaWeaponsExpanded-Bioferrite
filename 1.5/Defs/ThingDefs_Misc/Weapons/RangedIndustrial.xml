@@ -285,11 +285,11 @@
             </li>
             <li Class="CompProperties_AbilityBurner">
                 <numStreams>15</numStreams>
-                <range>6.9</range>
+                <range>5.9</range>
                 <!-- go a bit further than the actual ability range, since it's meant to be a noisy effect -->
                 <coneSizeDegrees>9</coneSizeDegrees>
                 <moteDef>Mote_IncineratorBurst</moteDef>
-                <barrelOffsetDistance>15</barrelOffsetDistance>
+                <barrelOffsetDistance>6</barrelOffsetDistance>
                 <sizeReductionDistanceThreshold>3</sizeReductionDistanceThreshold>
                 <lifespanNoise>40</lifespanNoise>
                 <rangeNoise>.4</rangeNoise>
