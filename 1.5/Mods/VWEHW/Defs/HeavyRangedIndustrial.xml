@@ -137,7 +137,7 @@
                 <cooldownTime>2</cooldownTime>
             </li>
         </tools>
-        <!--<modExtensions>
+        <modExtensions>
             <li Class="HeavyWeapons.HeavyWeapon">
                 <weaponHitPointsDeductionOnShot>1</weaponHitPointsDeductionOnShot>
                 <isHeavy>true</isHeavy>
@@ -149,7 +149,7 @@
                 </supportedTraits>
                 <disableOptionLabelKey>VWE.CannotEquipHeavy</disableOptionLabelKey>
             </li>
-        </modExtensions>-->
+        </modExtensions>
     </ThingDef>
 
     <AbilityDef>
