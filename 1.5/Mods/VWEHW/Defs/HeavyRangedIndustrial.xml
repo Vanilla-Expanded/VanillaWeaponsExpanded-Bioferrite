@@ -22,6 +22,7 @@
         <statBases>
             <WorkToMake>48000</WorkToMake>
             <Mass>3.4</Mass>
+			<MaxHitPoints>200</MaxHitPoints>
             <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
             <Flammability>0.7</Flammability>
             <MarketValue>880</MarketValue>
