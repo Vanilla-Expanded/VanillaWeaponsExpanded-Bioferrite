@@ -189,7 +189,7 @@
             <beamSetsGroundOnFire>true</beamSetsGroundOnFire>
             <ai_BeamIsIncendiary>true</ai_BeamIsIncendiary>
             <beamLineFleckDef>Fleck_IncineratorBeamSmoke</beamLineFleckDef>
-            <highlightColor>(90, 195, 255)</highlightColor>
+            <highlightColor>(80, 195, 255)</highlightColor>
             <secondaryHighlightColor>(10, 210, 220)</secondaryHighlightColor>
             <beamLineFleckChanceCurve>
                 <points>
