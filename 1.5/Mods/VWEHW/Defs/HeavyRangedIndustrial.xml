@@ -46,7 +46,7 @@
         </thingSetMakerTags>
         <verbs>
             <li>
-                <verbClass>Verb_ArcSprayIncinerator</verbClass>
+                <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_ArcSprayIncineratorHeavy</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <warmupTime>0.75</warmupTime>
                 <range>22.9</range>
@@ -161,7 +161,7 @@
         <ai_IsIncendiary>true</ai_IsIncendiary>
         <warmupStartSound>FireSpew_Warmup</warmupStartSound>
         <verbProperties>
-            <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_CastAbility_ArcSprayIncinerator</verbClass>
+            <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_CastAbility_ArcSprayIncineratorHeavy</verbClass>
             <warmupTime>0.75</warmupTime>
             <range>9.9</range>
             <minRange>3.9</minRange>

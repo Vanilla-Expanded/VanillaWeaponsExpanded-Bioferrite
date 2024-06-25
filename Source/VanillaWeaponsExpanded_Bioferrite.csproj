@@ -31,6 +31,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Reference Include="HeavyWeapons">
+          <HintPath>..\..\VanillaExpandedFramework\1.5\Assemblies\HeavyWeapons.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Xml" />
@@ -40,7 +44,7 @@
     <!-- The below condition will check if you've defined a reference called "Assembly-CSharp" and if that reference exists on disk.
         If that reference does not exist, it will add Krafs Rimworld Ref to the project. If it does exist, Krafs won't be added
         as a reference. This basically means that Krafs is treated as a fallback if Assembly-CSharp is not found -->
-    <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
+    <ItemGroup Condition="'@(Reference-&gt;WithMetadataValue('Identity', 'Assembly-CSharp')-&gt;Metadata('HintPath')-&gt;Exists())' == ''">
         <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*" />
     </ItemGroup>
 
