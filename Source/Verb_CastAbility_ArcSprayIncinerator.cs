@@ -91,7 +91,7 @@ public class Verb_CastAbility_ArcSprayIncinerator : Verb_CastAbility
         tmpHighlightCells.Clear();
         tmpSecondaryHighlightCells.Clear();
     }
-
+    
     protected override bool TryCastShot()
     {
         var flag = BeamTryCastShot();
@@ -102,7 +102,7 @@ public class Verb_CastAbility_ArcSprayIncinerator : Verb_CastAbility
         vector2 += normalized * BarrelOffset;
         var position = caster.Position;
         var moteDualAttached = MoteMaker.MakeInteractionOverlay(
-            ThingDefOf.Mote_IncineratorBurst, new TargetInfo(position, caster.Map),
+            IncineratorBurstMote, new TargetInfo(position, caster.Map),
             new TargetInfo(intVec, caster.Map));
         var num = Vector3.Distance(vector, vector2);
         var num2 = num < BarrelOffset ? 0.5f : 1f;
@@ -304,7 +304,7 @@ public class Verb_CastAbility_ArcSprayIncinerator : Verb_CastAbility
         var caster = this.caster;
         var thing = currentTarget.HasThing ? currentTarget.Thing : null;
 
-        Log.Message(EquipmentSource);
+        // Log.Message(EquipmentSource);
         var equipmentSource = EquipmentSource;
         battleLog.Add(new BattleLogEntry_RangedFire(caster, thing,
             equipmentSource?.def, null, false));
@@ -483,6 +483,8 @@ public class Verb_CastAbility_ArcSprayIncinerator : Verb_CastAbility
             path = [];
         }
     }
+
+    protected virtual ThingDef IncineratorBurstMote => ThingDefOf.Mote_IncineratorBurst;
 
     private List<Vector3> path = [];
 
