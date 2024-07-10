@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Vanilla Weapons Expanded - Bioferrite</name>
-	<author>Oskar Potocki, xrushha</author>
+	<author>Oskar Potocki, xrushha, Arquebus, Taranchuk</author>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
 	<packageId>VanillaExpanded.VWEBF</packageId>
-	<description>Text.todo 
+	<description>Vanilla Weapons Expanded - Bioferrite aims to bring several new weapons inspired by the hellcat rifle in Anomaly DLC. These weapons will have unique, triggerable abilities that consume bioferrite charges. Without adding too much bloat, this mod allows you to unlock unique, useful guns as long as you have bioferrite to sustain them.
+	
+	From a short range shotgun capable of blasting your enemies with intense heat, through a battle rifle with an underbarrel flare gun, to a bolt action rifle with a long bioferrite bayonet, you will be able to really utisile this new resource in whatever way you want.
+	
+	If you have Vanilla Factions Expanded - Pirates, you may enjoy the new Warbolter warcasket weapon, and with Vanilla Weapons Expanded - Heavy, you can enjoy the powerful heavy incinerator.
+	
+Vanilla Weapons Expanded is part of a series of mods expanding on everyday life on the Rimworld. When paired together with a brand new Vanilla Apparel Expanded and Vanilla Armours Expanded, you can bring something to your game that will keep you interested in it for days.
 </description>
 	<modDependencies>
 		<li>
