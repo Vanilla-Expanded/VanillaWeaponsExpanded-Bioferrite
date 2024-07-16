@@ -283,12 +283,12 @@
                 <damAmount>12</damAmount>
                 <canHitFilledCells>true</canHitFilledCells>
             </li>
-            <li Class="CompProperties_AbilityBurner">
+            <li Class="VanillaWeaponsExpanded_Bioferrite.CompProperties_AbilityFirestorm">
                 <numStreams>15</numStreams>
                 <range>5.9</range>
                 <!-- go a bit further than the actual ability range, since it's meant to be a noisy effect -->
                 <coneSizeDegrees>15</coneSizeDegrees>
-                <moteDef>VWEB_Mote_Blue_IncineratorBurst</moteDef>
+                <moteDef>VWEB_Mote_FirestormBurst</moteDef>
                 <barrelOffsetDistance>15</barrelOffsetDistance>
                 <sizeReductionDistanceThreshold>3</sizeReductionDistanceThreshold>
                 <lifespanNoise>40</lifespanNoise>
