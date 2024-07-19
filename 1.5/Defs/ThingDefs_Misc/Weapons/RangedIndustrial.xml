@@ -285,14 +285,14 @@
             </li>
             <li Class="VanillaWeaponsExpanded_Bioferrite.CompProperties_AbilityFirestorm">
                 <numStreams>15</numStreams>
-                <range>5.9</range>
+                <range>1</range>
                 <!-- go a bit further than the actual ability range, since it's meant to be a noisy effect -->
                 <coneSizeDegrees>15</coneSizeDegrees>
                 <moteDef>VWEB_Mote_FirestormBurst</moteDef>
                 <barrelOffsetDistance>15</barrelOffsetDistance>
-                <sizeReductionDistanceThreshold>3</sizeReductionDistanceThreshold>
+                <sizeReductionDistanceThreshold>1</sizeReductionDistanceThreshold>
                 <lifespanNoise>40</lifespanNoise>
-                <rangeNoise>.4</rangeNoise>
+                <rangeNoise>.2</rangeNoise>
                 <effecterDef>BurnerUsed</effecterDef>
             </li>
         </comps>

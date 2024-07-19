@@ -60,7 +60,7 @@
                 <_NumFrames>12</_NumFrames>
                 <_FramesPerSec>12</_FramesPerSec>
             </shaderParameters>
-            <drawSize>3.5</drawSize>
+            <drawSize>10</drawSize>
         </graphicData>
     </ThingDef>
 </Defs>

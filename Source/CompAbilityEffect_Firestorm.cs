@@ -36,7 +36,7 @@ public class CompAbilityEffect_Firestorm : CompAbilityEffect_Burner
 				{
 					float angle = Rand.Range(0f - this.Props.coneSizeDegrees, this.Props.coneSizeDegrees);
 					Vector3 vector = normalized.RotatedBy(angle);
-					Vector3 vect = drawPos + vector * (this.Props.range + Rand.Value * this.Props.rangeNoise);
+					Vector3 vect = drawPos + vector * (this.Props.range);
 					IntVec3 intVec2 = GenSight.LastPointOnLineOfSight(intVec, vect.ToIntVec3(), (IntVec3 c) => c.CanBeSeenOverFast(map), skipFirstCell: true);
 					if (!intVec2.IsValid)
 					{
@@ -54,8 +54,8 @@ public class CompAbilityEffect_Firestorm : CompAbilityEffect_Burner
 							worldSource = drawPos + vector * this.Props.barrelOffsetDistance,
 							worldTarget = intVec2.ToVector3(),
 							moveVector = vector,
-							startScale = Rand.Range(0.8f, 1.2f) * num2,
-							endScale = (1f + Rand.Range(0.1f, 0.4f)) * num2,
+							startScale = Rand.Range(0.8f, 1f) * num2,
+							endScale = (1f) * num2,
 							lifespanTicks = Mathf.FloorToInt(num * 5f) + Rand.Range(-this.Props.lifespanNoise, this.Props.lifespanNoise)
 						});
 						map.effecterMaintainer.AddEffecterToMaintain(this.Props.effecterDef.Spawn(intVec2, map), intVec2, 100);
