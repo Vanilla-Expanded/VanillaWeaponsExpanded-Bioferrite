@@ -1,4 +1,4 @@
-﻿using HeavyWeapons;
+﻿using VEF.Weapons;
 using RimWorld;
 using Verse;
 

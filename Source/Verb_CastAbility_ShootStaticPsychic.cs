@@ -14,7 +14,7 @@ public class Verb_CastAbility_ShootStaticPsychic : Verb_CastAbility_Shoot
     {
         if (verbProps.range > 0f)
         {
-            verbProps.DrawRadiusRing_NewTemp(caster.Position, this);
+            verbProps.DrawRadiusRing(caster.Position, this);
         }
 
         if (CanHitTarget(target) && IsApplicableTo(target))

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>VWEB_HeavyIncinerator</defName>
+        <label>heavy incinerator</label>
+        <description>A powerful, experimental incinerator that can spray a stream of flame into an area. It can shoot in an arc over allies without harming them. The flame burns off rapidly, so it will only ignite the most flammable targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.\n\nWhile the main incinerator flamethrower has limited number of uses, the weapon also comes equipped with a bioferrite-powered vaporizer unit which generates a massive blast of superheated plasma from a pressurized bioferrite charge, destroying everything hit. The vaporizer unit must be refueled after each use.</description>
+        <relicChance>0</relicChance>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponRanged/Heavy/HeavyIncinerator</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <soundInteract>Interact_Rifle</soundInteract>
+        <generateCommonality>0.3</generateCommonality>
+        <weaponClasses>
+            <li>RangedHeavy</li>
+        </weaponClasses>
+        <weaponTags Inherit='False'>
+            <li>HeavyGun</li>
+        </weaponTags>
+        <statBases>
+            <WorkToMake>48000</WorkToMake>
+            <Mass>3.4</Mass>
+			<MaxHitPoints>200</MaxHitPoints>
+            <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+            <Flammability>0.7</Flammability>
+            <MarketValue>880</MarketValue>
+        </statBases>
+        <costList>
+            <Steel>100</Steel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+            <Bioferrite>30</Bioferrite>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>BioferriteIgnition</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+            <displayPriority>71</displayPriority>
+            <recipeUsers Inherit="false">
+                <li>BioferriteShaper</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingSetMakerTags>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <verbs>
+            <li>
+                <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_ArcSprayIncineratorHeavy</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <warmupTime>0.75</warmupTime>
+                <range>22.9</range>
+                <minRange>5.9</minRange>
+                <beamFullWidthRange>18</beamFullWidthRange>
+                <burstShotCount>20</burstShotCount>
+                <showBurstShotStats>false</showBurstShotStats>
+                <requireLineOfSight>true</requireLineOfSight>
+                <beamWidth>8</beamWidth>
+                <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+                <beamDamageDef>Flame</beamDamageDef>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+                <soundCastBeam>Flamethrower_Firing</soundCastBeam>
+                <beamGroundFleckDef>Fleck_IncineratorBeamBurn</beamGroundFleckDef>
+                <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+                <beamMaxDeviation>0.5</beamMaxDeviation>
+                <beamCurvature>0</beamCurvature>
+                <beamEndEffecterDef>IncineratorBeam_End</beamEndEffecterDef>
+                <beamChanceToStartFire>0.85</beamChanceToStartFire>
+                <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+                <beamStartOffset>.5</beamStartOffset>
+                <beamHitsNeighborCells>true</beamHitsNeighborCells>
+                <beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
+                <beamHitsNeighborCellsRequiresLOS>true</beamHitsNeighborCellsRequiresLOS>
+                <beamSetsGroundOnFire>true</beamSetsGroundOnFire>
+                <ai_BeamIsIncendiary>true</ai_BeamIsIncendiary>
+                <beamLineFleckDef>Fleck_IncineratorBeamSmoke</beamLineFleckDef>
+                <highlightColor>(180, 60, 10)</highlightColor>
+                <secondaryHighlightColor>(220, 210, 20)</secondaryHighlightColor>
+                <beamLineFleckChanceCurve>
+                    <points>
+                        <li>(0, 0)</li>
+                        <li>(0.65, 0.02)</li>
+                        <li>(1, .5)</li>
+                    </points>
+                </beamLineFleckChanceCurve>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <flammabilityAttachFireChanceCurve>
+                    <points>
+                        <li>(0.6, 0)</li>
+                        <li>(0.7, 0.2)</li>
+                        <li>(1.2, 0.8)</li>
+                    </points>
+                </flammabilityAttachFireChanceCurve>
+                <rangedFireRulepack>Combat_RangedFlamethrower</rangedFireRulepack>
+            </li>
+        </verbs>
+        <comps Inherit="False">
+            <li Class="CompProperties_EquippableAbilityReloadable">
+                <abilityDef>VWEB_HeavyIncineratorVaporizer</abilityDef>
+                <maxCharges>1</maxCharges>
+                <soundReload>Standard_Reload</soundReload>
+                <chargeNoun>burner charge</chargeNoun>
+                <ammoDef>Bioferrite</ammoDef>
+                <ammoCountPerCharge>30</ammoCountPerCharge>
+                <baseReloadTicks>60</baseReloadTicks>
+            </li>
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Biocodable"/>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+            <li Class="CompProperties_Art">
+                <nameMaker>NamerArtWeaponGun</nameMaker>
+                <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+                <minQualityForArtistic>Excellent</minQualityForArtistic>
+            </li>
+        </comps>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="VEF.Weapons.HeavyWeapon">
+                <weaponHitPointsDeductionOnShot>1</weaponHitPointsDeductionOnShot>
+                <isHeavy>true</isHeavy>
+                <supportedArmors>
+                    <li>VWE_Apparel_Exoframe</li>
+                </supportedArmors>
+                <supportedTraits>
+                    <li>Tough</li>
+                </supportedTraits>
+                <disableOptionLabelKey>VWE.CannotEquipHeavy</disableOptionLabelKey>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <AbilityDef>
+        <defName>VWEB_HeavyIncineratorVaporizer</defName>
+        <label>heavy incinerator vaporizer</label>
+        <description>Fire a short-ranged vaporizer stream, melting everything in front of the user. This burner works a little bit differently than the hellcat one. Instead of being a typical firespew, it’s more like an Incinerator arc.</description>
+        <iconPath>UI/Abilities/HeavyIncineratorVaporize</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
+        <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>VanillaWeaponsExpanded_Bioferrite.Verb_CastAbility_ArcSprayIncineratorHeavy</verbClass>
+            <warmupTime>0.75</warmupTime>
+            <range>9.9</range>
+            <minRange>3.9</minRange>
+            <beamFullWidthRange>6</beamFullWidthRange>
+            <burstShotCount>10</burstShotCount>
+            <showBurstShotStats>false</showBurstShotStats>
+            <requireLineOfSight>true</requireLineOfSight>
+            <beamWidth>3</beamWidth>
+            <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+            <beamDamageDef>Flame</beamDamageDef>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+            <soundCastBeam>Flamethrower_Firing</soundCastBeam>
+            <beamGroundFleckDef>Fleck_IncineratorBeamBurn</beamGroundFleckDef>
+            <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+            <beamMaxDeviation>0.5</beamMaxDeviation>
+            <beamCurvature>0</beamCurvature>
+            <beamEndEffecterDef>IncineratorBeam_End</beamEndEffecterDef>
+            <beamChanceToStartFire>0.85</beamChanceToStartFire>
+            <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+            <beamStartOffset>.5</beamStartOffset>
+            <beamHitsNeighborCells>true</beamHitsNeighborCells>
+            <beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
+            <beamHitsNeighborCellsRequiresLOS>true</beamHitsNeighborCellsRequiresLOS>
+            <beamSetsGroundOnFire>true</beamSetsGroundOnFire>
+            <ai_BeamIsIncendiary>true</ai_BeamIsIncendiary>
+            <beamLineFleckDef>Fleck_IncineratorBeamSmoke</beamLineFleckDef>
+            <highlightColor>(80, 195, 255)</highlightColor>
+            <secondaryHighlightColor>(10, 210, 220)</secondaryHighlightColor>
+            <beamLineFleckChanceCurve>
+                <points>
+                    <li>(0, 0)</li>
+                    <li>(0.65, 0.02)</li>
+                    <li>(1, .5)</li>
+                </points>
+            </beamLineFleckChanceCurve>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+            <flammabilityAttachFireChanceCurve>
+                <points>
+                    <li>(0.6, 0)</li>
+                    <li>(0.7, 0.2)</li>
+                    <li>(1.2, 0.8)</li>
+                </points>
+            </flammabilityAttachFireChanceCurve>
+            <rangedFireRulepack>Combat_RangedFlamethrower</rangedFireRulepack>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>
+

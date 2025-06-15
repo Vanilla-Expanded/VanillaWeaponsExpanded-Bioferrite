@@ -164,7 +164,7 @@ public class Verb_CastAbility_Shoot : Verb_CastAbility
         {
             var flyOverhead = projectile2?.def?.projectile != null &&
                               projectile2.def.projectile.flyOverhead;
-            resultingLine.ChangeDestToMissWild_NewTemp(
+            resultingLine.ChangeDestToMissWild(
                 shotReport.AimOnTargetChance_StandardTarget, flyOverhead,
                 caster.Map);
             ThrowDebugText(
